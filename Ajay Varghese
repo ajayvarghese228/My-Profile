@@ -1,0 +1,95 @@
+import React from "react";
+
+export default function AjayPortfolio() {
+  return (
+    <div className="p-6 max-w-4xl mx-auto font-sans">
+      <h1 className="text-4xl font-bold mb-2">AJAY VARGHESE – Portfolio</h1>
+      <p className="text-sm text-gray-600 mb-6">Manchester, UK | ajayvarghese228@gmail.com | <a href="https://www.linkedin.com/in/ajayvarghese228" className="text-blue-600 underline">LinkedIn</a></p>
+
+      <section className="mb-6">
+        <h2 className="text-2xl font-semibold mb-2">About Me</h2>
+        <p>I'm a passionate and driven Engineering Management graduate (Distinction, University of York), actively seeking impactful opportunities in the UK where I can combine my technical grounding, project coordination skills, and strategic thinking to deliver measurable results.</p>
+        <p className="mt-2">I bring a unique mix of experience across tech, sustainability startups, and customer-focused marketing, with a strong appetite for solving problems, improving systems, and collaborating with diverse teams.</p>
+      </section>
+
+      <section className="mb-6">
+        <h2 className="text-2xl font-semibold mb-2">Experience</h2>
+        <div className="mb-4">
+          <h3 className="font-bold">Business Development & Strategy Associate</h3>
+          <p className="italic">New Waste Management (Startup, Remote – UK) | Aug 2024 – Present</p>
+          <ul className="list-disc list-inside">
+            <li>Aligned programme plans with strategic goals.</li>
+            <li>Created reports, tracked KPIs, and supported stakeholder decisions.</li>
+            <li>Analysed operations and suggested improvements across teams.</li>
+            <li>Maintained risk logs and planning dashboards for governance.</li>
+          </ul>
+        </div>
+
+        <div className="mb-4">
+          <h3 className="font-bold">Marketing & Sales Associate</h3>
+          <p className="italic">Full House Partners – Manchester, UK | May 2024 – Aug 2024</p>
+          <ul className="list-disc list-inside">
+            <li>Reported sales KPIs and campaign progress.</li>
+            <li>Presented insights in PowerPoint dashboards.</li>
+            <li>Helped realign campaigns using feedback analysis.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="font-bold">Associate Software Engineer</h3>
+          <p className="italic">Hexaware Technologies – Chennai, India | Aug 2020 – Aug 2022</p>
+          <ul className="list-disc list-inside">
+            <li>Maintained incident logs and delivery SLAs.</li>
+            <li>Collaborated with PMs to identify risks and trends.</li>
+            <li>Supported change management and QA testing.</li>
+            <li>Produced documentation and stakeholder reports.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section className="mb-6">
+        <h2 className="text-2xl font-semibold mb-2">Core Skills</h2>
+        <ul className="list-disc list-inside">
+          <li><strong>Project & Business Tools:</strong> Power BI, NVIVO, SPSS, WordPress, HubSpot, Excel, PowerPoint</li>
+          <li><strong>Communication & Strategy:</strong> Stakeholder engagement, Status reporting, KPI dashboards</li>
+          <li><strong>IT & Service Management:</strong> JIRA, ServiceNow, AppDynamics, SolarWinds</li>
+          <li><strong>Technical:</strong> Python, C, Agile Coordination, Governance & Risk</li>
+        </ul>
+      </section>
+
+      <section className="mb-6">
+        <h2 className="text-2xl font-semibold mb-2">Featured Projects</h2>
+        <ul className="list-disc list-inside">
+          <li><strong>York Waste Strategy Review:</strong> Data-led review with sustainability recommendations.</li>
+          <li><strong>Bike Company Business Simulation:</strong> CEO role in 5-year simulation achieving £120,000 revenue.</li>
+          <li><strong>Sales Forecasting:</strong> Power BI-based insights from time series analysis to improve strategy.</li>
+        </ul>
+      </section>
+
+      <section className="mb-6">
+        <h2 className="text-2xl font-semibold mb-2">Education</h2>
+        <p><strong>MSc Engineering Management</strong> – University of York (Distinction)</p>
+        <p><strong>BTech Electrical & Electronics Engineering</strong> – APJ Abdul Kalam Technological University</p>
+      </section>
+
+      <section className="mb-6">
+        <h2 className="text-2xl font-semibold mb-2">Certifications & Recognition</h2>
+        <ul className="list-disc list-inside">
+          <li>Agile Project Management</li>
+          <li>Engineering Project Management: Initiating and Planning</li>
+          <li>Data Visualisation with Power BI</li>
+          <li>Agile Methodology – LinkedIn Skill Assessment Badge</li>
+          <li>Paper accepted at CISCON 2020</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-semibold mb-2">Let’s Connect</h2>
+        <p>If you're hiring for roles in project coordination, business analysis, sustainability, or engineering strategy — I'm ready to make an impact.</p>
+        <p>Available for interviews across the UK and open to relocation.</p>
+        <p className="mt-2">📧 Email: ajayvarghese228@gmail.com</p>
+        <p>🔗 <a href="https://www.linkedin.com/in/ajayvarghese228" className="text-blue-600 underline">LinkedIn Profile</a></p>
+      </section>
+    </div>
+  );
+}
