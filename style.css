@@ -102,77 +102,52 @@ a:hover {
     text-decoration: none;
     cursor: pointer;
 }
-/* --- About Me Section with Image --- */
-#about .about-content {
-    display: flex;
-    align-items: flex-start; 
-    gap: 25px; 
-    margin-top: 15px; 
-}
-
-#about .about-image-container {
-    flex-basis: 160px; 
-    flex-shrink: 0;   
-}
-
-#about .about-image-container img {
-    width: 100%;              
-    height: auto;             
-    border-radius: 50%;       
-    border: 3px solid #007bff; 
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15); 
-}
-
-#about .about-text-container {
-    flex-grow: 1; 
-}
-
 /* In your style.css */
 
 /* ... other styles ... */
 
-/* For Desktop/Larger Screens: */
 #about .about-content {
     display: flex;
-    align-items: flex-start; 
-    gap: 15px; /* Adjusted for smaller image */
+    flex-direction: column; /* Stack items vertically: text first, then image */
+    align-items: center;    /* Center items horizontally */
+    gap: 20px;              /* Space between the text block and the image block */
     margin-top: 15px;
-    max-width: 650px; 
-    margin-left: auto;   
-    margin-right: auto;  
+    max-width: 650px;       /* Constrains the width of this centered block */
+    margin-left: auto;      /* Centers the .about-content block */
+    margin-right: auto;     /* Centers the .about-content block */
+}
+
+#about .about-text-container {
+    text-align: center; /* Centers the text within its block */
+    width: 100%;        /* Allows text to use the full width of .about-content */
 }
 
 #about .about-image-container {
-    flex-basis: 60px; /* <<< PASSPORT-SIZED for DESKTOP (Example value) */
-    flex-shrink: 0;
+    width: 60px; /* PASSPORT-SIZE for the image container (desktop) - adjust as needed */
+    /* flex-basis and flex-shrink are less critical here with explicit width and column direction */
 }
 
-/* ... other styles for .about-image-container img ... */
+#about .about-image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%; /* Keeps it circular */
+    border: 3px solid #007bff; /* Your theme's blue color, adjust if needed */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    display: block; /* Good practice for centered images */
+}
 
-
-/* Responsive adjustments for the About Me section (Mobile/Smaller Screens) */
+/* Responsive adjustments for the About Me section */
 @media (max-width: 768px) { 
     #about .about-content {
-        flex-direction: column; 
-        align-items: center;    
+        gap: 15px; /* Optionally adjust gap for smaller screens */
+        /* max-width and margins for centering are inherited and should still work well */
     }
 
     #about .about-image-container {
-        flex-basis: auto; 
-        width: 55px;  /* <<< PASSPORT-SIZED for MOBILE (Example value, changed from 80px) */
-        margin-bottom: 15px; /* Optionally reduce margin if image is much smaller */
+        width: 55px; /* PASSPORT-SIZE for the image container (mobile) - adjust as needed */
     }
 
-    #about .about-text-container {
-        text-align: center; 
-    }
-}
-
-/* The .button:hover rule below is part of your existing CSS and is fine.
-   No changes needed for it for the image resizing. */
-.button:hover {
-    background-color: #0056b3;
-    text-decoration: none; /* Ensure no underline on button hover if link */
+    /* .about-text-container text-align: center is inherited */
 }
 
 /* ... other styles ... */
