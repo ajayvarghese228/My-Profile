@@ -3,62 +3,302 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Profile - Ajay Varghese</title>
-    <link rel="stylesheet" href="style.css"> {/* ADD THIS LINE */}
+    <title>Ajay Varghese | Portfolio</title>
     <style>
-        /* If you had any styles here, move them to style.css */
+        /* --- Global Styles & Variables --- */
+        :root {
+            --primary-color: #007bff; /* A nice blue */
+            --primary-hover-color: #0056b3;
+            --secondary-color: #6c757d; /* Muted gray */
+            --light-gray-color: #f8f9fa;
+            --dark-gray-color: #343a40;
+            --text-color: #212529;
+            --white-color: #ffffff;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-gray-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding-top: 20px; /* Space from top */
+            padding-bottom: 20px; /* Space from bottom */
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px; /* Max width for content */
+            background-color: var(--white-color);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden; /* Ensures box shadow is neat */
+            margin-bottom: 30px;
+        }
+
+        /* --- Header / Hero Section --- */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #0056b3 100%);
+            color: var(--white-color);
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.8em;
+            font-weight: 600;
+        }
+
+        .hero .tagline {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        /* --- Section Styling --- */
+        section {
+            padding: 30px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.8em;
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            display: inline-block; /* So border only spans text width */
+        }
+
+        /* --- About Me --- */
+        #about p {
+            font-size: 1.1em;
+            margin-bottom: 0;
+        }
+
+        /* --- Skills --- */
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skills-list li {
+            background-color: var(--light-gray-color);
+            color: var(--primary-color);
+            padding: 8px 15px;
+            border-radius: 20px; /* Pill shape */
+            font-size: 0.95em;
+            font-weight: 500;
+            border: 1px solid #dee2e6;
+        }
+
+        /* --- Projects --- */
+        .project-item {
+            margin-bottom: 20px;
+        }
+        .project-item:last-child {
+            margin-bottom: 0;
+        }
+        .project-item h3 {
+            font-size: 1.3em;
+            margin-bottom: 5px;
+            color: var(--dark-gray-color);
+        }
+        .project-item p {
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+        .project-link {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--white-color);
+            padding: 10px 18px;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        .project-link:hover {
+            background-color: #5a6268;
+        }
+
+        /* --- Resume Download Button --- */
+        .resume-section {
+            text-align: center;
+            padding: 40px 30px; /* More padding for emphasis */
+        }
+        .resume-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: 15px 35px; /* Larger button */
+            font-size: 1.2em;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .resume-button:hover {
+            background-color: var(--primary-hover-color);
+            transform: translateY(-2px); /* Slight lift on hover */
+        }
+
+        /* --- Contact Section --- */
+        .contact-list {
+            list-style: none;
+            padding: 0;
+        }
+        .contact-list li {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        .contact-list a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .contact-list a:hover {
+            text-decoration: underline;
+            color: var(--primary-hover-color);
+        }
+        .contact-list strong {
+            color: var(--dark-gray-color);
+            min-width: 70px; /* Align items */
+            display: inline-block;
+        }
+
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--secondary-color);
+            font-size: 0.9em;
+            width: 100%;
+        }
+
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2em;
+            }
+            .hero .tagline {
+                font-size: 1.1em;
+            }
+            h2 {
+                font-size: 1.6em;
+            }
+            .container {
+                width: 95%;
+                margin-top: 10px;
+            }
+            section, .hero {
+                padding: 25px 20px;
+            }
+            .resume-section {
+                 padding: 30px 20px;
+            }
+            .resume-button {
+                padding: 12px 30px;
+                font-size: 1.1em;
+            }
+        }
+         @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8em;
+            }
+            .hero .tagline {
+                font-size: 1em;
+            }
+             .skills-list li {
+                font-size: 0.9em;
+                padding: 6px 12px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container"> {/* OPTIONAL: Add a container div */}
-        <header>
+
+    <div class="container">
+        <header class="hero">
             <h1>Ajay Varghese</h1>
-            <p>Aspiring Software Developer | Tech Enthusiast</p>
+            <p class="tagline">Aspiring Software Developer | Tech Enthusiast</p>
         </header>
 
         <section id="about">
             <h2>About Me</h2>
-            <p>Hello! I'm Ajay Varghese, a passionate and dedicated individual with a strong interest in technology and software development...</p>
+            <p>Hello! I'm Ajay Varghese, a passionate and dedicated individual with a strong interest in technology and software development. Eager to apply my skills and learn new technologies to contribute to impactful projects.</p>
         </section>
 
         <section id="skills">
             <h2>Skills</h2>
-            <ul>
-                <li>HTML, CSS, JavaScript</li>
+            <ul class="skills-list">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
                 <li>Python</li>
                 <li>Java</li>
                 <li>C/C++</li>
                 <li>SQL</li>
                 <li>Git & GitHub</li>
-                {/* Add more skills */}
-            </ul>
+                <li>Power BI</li>
+                <li>Project Management</li>
+                <li>Data Analysis</li>
+                </ul>
         </section>
 
         <section id="projects">
             <h2>Projects</h2>
-            <article>
-                <h3>Project 1: [Your Project Name]</h3>
-                <p>Description of your project...</p>
-                <p><a href="[link-to-your-project]" target="_blank">View Project</a></p>
-            </article>
-            {/* Add more projects */}
-        </section>
+            <div class="project-item">
+                <h3>York Waste Strategy Review</h3>
+                <p>Conducted a data-driven analysis of York’s waste management to provide strategic recommendations for improving efficiency and sustainability.</p>
+                </div>
+            <div class="project-item">
+                <h3>Sales Forecasting with Time Series Analysis</h3>
+                <p>Performed time series analysis on sales data to generate accurate forecasts, using visualisations (Excel and Power BI) to present insights.</p>
+                </div>
+            </section>
 
-        <section id="resume">
+        <section id="resume" class="resume-section">
             <h2>Resume</h2>
-            <p><a href="Aboutme.pdf" target="_blank" class="button">Download Resume</a></p>
+            <a href="Aboutme.pdf" target="_blank" class="resume-button">Download My Resume</a>
         </section>
 
         <section id="contact">
             <h2>Contact</h2>
-            <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
-            <p>LinkedIn: <a href="[your-linkedin-url]" target="_blank">[Your LinkedIn Profile]</a></p>
-            <p>GitHub: <a href="https://github.com/ajayvarghese228" target="_blank">ajayvarghese228</a></p>
+            <ul class="contact-list">
+                <li><strong>Email:</strong> <a href="mailto:ajayvarghese228@gmail.com">ajayvarghese228@gmail.com</a></li>
+                <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/ajayvarghese228" target="_blank">linkedin.com/in/ajayvarghese228</a></li>
+                <li><strong>GitHub:</strong> <a href="https://github.com/ajayvarghese228" target="_blank">github.com/ajayvarghese228</a></li>
+            </ul>
         </section>
+    </div>
 
-        <footer>
-            <p>&copy; 2024 Ajay Varghese. All rights reserved.</p>
-        </footer>
-    </div> {/* END of container div */}
+    <footer>
+        <p>&copy; <span id="currentYear"></span> Ajay Varghese. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Simple script to update the year in the footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+
 </body>
 </html>
