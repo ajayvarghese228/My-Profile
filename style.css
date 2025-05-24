@@ -52,16 +52,16 @@ h1, h2, h3 {
     border-left: 5px solid #673ab7; /* Deep purple left border */
 }
 
-/* --- Internal styles for "Looking For" Section (You already had these, just ensuring placement) --- */
+/* --- Internal styles for "Looking For" Section --- */
 #looking-for p {
     font-size: 1.05em;
     margin-bottom: 15px;
-    color: #444; /* Slightly darker text for this section if desired, or inherit from general p */
+    color: #444; 
 }
 
 .looking-for-list {
-    list-style: none; /* Emojis will act as bullets */
-    padding-left: 0;  /* Remove default padding */
+    list-style: none; 
+    padding-left: 0;  
     margin-top: 10px;
     margin-bottom: 15px;
 }
@@ -69,43 +69,12 @@ h1, h2, h3 {
 .looking-for-list li {
     font-size: 1.05em;
     margin-bottom: 8px;
-    padding-left: 5px; /* Optional: small indent if needed */
-    color: #333; /* Ensure text color for list items */
+    padding-left: 5px; 
+    color: #333; 
 }
 /* End of "Looking For" internal styles */
 
-
-/* --- Text & Links --- */
-p {
-    line-height: 1.6;
-    color: #555; /* Slightly lighter text color */
-}
-
-a {
-    color: #007bff; /* Standard link blue */
-    text-decoration: none; /* Remove underline by default */
-}
-
-a:hover {
-    color: #0056b3; /* Darker blue on hover */
-    text-decoration: underline; /* Add underline on hover */
-}
-
-/* --- Buttons (if you add any) --- */
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white !important; /* Ensure white text for buttons */
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    cursor: pointer;
-}
-/* In your style.css */
-
-/* ... other styles ... */
-
+/* --- About Me Section CSS - Stacked, Centered, Passport Image --- */
 #about .about-content {
     display: flex;
     flex-direction: column; /* Stack items vertically: text first, then image */
@@ -124,7 +93,6 @@ a:hover {
 
 #about .about-image-container {
     width: 60px; /* PASSPORT-SIZE for the image container (desktop) - adjust as needed */
-    /* flex-basis and flex-shrink are less critical here with explicit width and column direction */
 }
 
 #about .about-image-container img {
@@ -140,14 +108,43 @@ a:hover {
 @media (max-width: 768px) { 
     #about .about-content {
         gap: 15px; /* Optionally adjust gap for smaller screens */
-        /* max-width and margins for centering are inherited and should still work well */
     }
 
     #about .about-image-container {
         width: 55px; /* PASSPORT-SIZE for the image container (mobile) - adjust as needed */
     }
+}
+/* End of About Me Section CSS */
 
-    /* .about-text-container text-align: center is inherited */
+/* --- Text & Links --- */
+p {
+    line-height: 1.6;
+    color: #555; 
 }
 
-/* ... other styles ... */
+a {
+    color: #007bff; 
+    text-decoration: none; 
+}
+
+a:hover {
+    color: #0056b3; 
+    text-decoration: underline; 
+}
+
+/* --- Buttons (if you add any) --- */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white !important; 
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3;
+    text-decoration: none; 
+}
