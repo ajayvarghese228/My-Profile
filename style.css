@@ -127,7 +127,30 @@ a:hover {
     flex-grow: 1; 
 }
 
-/* Responsive adjustments for the About Me section */
+/* In your style.css */
+
+/* ... other styles ... */
+
+/* For Desktop/Larger Screens: */
+#about .about-content {
+    display: flex;
+    align-items: flex-start; 
+    gap: 15px; /* Adjusted for smaller image */
+    margin-top: 15px;
+    max-width: 650px; 
+    margin-left: auto;   
+    margin-right: auto;  
+}
+
+#about .about-image-container {
+    flex-basis: 60px; /* <<< PASSPORT-SIZED for DESKTOP (Example value) */
+    flex-shrink: 0;
+}
+
+/* ... other styles for .about-image-container img ... */
+
+
+/* Responsive adjustments for the About Me section (Mobile/Smaller Screens) */
 @media (max-width: 768px) { 
     #about .about-content {
         flex-direction: column; 
@@ -136,8 +159,8 @@ a:hover {
 
     #about .about-image-container {
         flex-basis: auto; 
-        width: 80px;  /* REDUCED from 100px - Adjust this value as needed */
-        margin-bottom: 20px; 
+        width: 55px;  /* <<< PASSPORT-SIZED for MOBILE (Example value, changed from 80px) */
+        margin-bottom: 15px; /* Optionally reduce margin if image is much smaller */
     }
 
     #about .about-text-container {
@@ -145,10 +168,11 @@ a:hover {
     }
 }
 
-/* The .button:hover rule below is unrelated to the image size,
-   but I'm including it as it was part of your paste.
-   No changes needed for it based on your request. */
+/* The .button:hover rule below is part of your existing CSS and is fine.
+   No changes needed for it for the image resizing. */
 .button:hover {
     background-color: #0056b3;
     text-decoration: none; /* Ensure no underline on button hover if link */
 }
+
+/* ... other styles ... */
