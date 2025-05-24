@@ -5,290 +5,412 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajay Varghese | Portfolio</title>
     <style>
-        /* --- Global Styles & Variables --- */
-        :root {
-            --primary-color: #007bff; /* A nice blue */
-            --primary-hover-color: #0056b3;
-            --secondary-color: #6c757d; /* Muted gray */
-            --light-gray-color: #f8f9fa;
-            --dark-gray-color: #343a40;
-            --text-color: #212529;
-            --white-color: #ffffff;
-            --border-radius: 8px;
-            --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.7;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: var(--light-gray-color);
-            color: var(--text-color);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            padding-top: 20px; /* Space from top */
-            padding-bottom: 20px; /* Space from bottom */
+            background-color: #f4f4f4;
+            color: #333;
         }
 
         .container {
-            width: 90%;
-            max-width: 800px; /* Max width for content */
-            background-color: var(--white-color);
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            overflow: hidden; /* Ensures box shadow is neat */
-            margin-bottom: 30px;
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 20px;
         }
 
-        /* --- Header / Hero Section --- */
-        .hero {
-            background: linear-gradient(135deg, var(--primary-color) 0%, #0056b3 100%);
-            color: var(--white-color);
-            padding: 40px 30px;
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
             text-align: center;
+            border-bottom: #0779e4 3px solid;
         }
 
-        .hero h1 {
-            margin: 0 0 10px 0;
-            font-size: 2.8em;
-            font-weight: 600;
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
         }
 
-        .hero .tagline {
-            font-size: 1.3em;
-            margin-bottom: 20px;
-            font-weight: 300;
-            opacity: 0.9;
+        header p {
+            margin: 5px 0;
+            font-size: 0.9em;
         }
 
-        /* --- Section Styling --- */
-        section {
-            padding: 30px;
-            border-bottom: 1px solid #e9ecef;
-        }
-        section:last-of-type {
-            border-bottom: none;
-        }
-
-        h2 {
-            color: var(--primary-color);
-            font-size: 1.8em;
-            margin-top: 0;
-            margin-bottom: 20px;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 10px;
-            display: inline-block; /* So border only spans text width */
-        }
-
-        /* --- About Me --- */
-        #about p {
-            font-size: 1.1em;
-            margin-bottom: 0;
-        }
-
-        /* --- Skills --- */
-        .skills-list {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skills-list li {
-            background-color: var(--light-gray-color);
-            color: var(--primary-color);
-            padding: 8px 15px;
-            border-radius: 20px; /* Pill shape */
-            font-size: 0.95em;
-            font-weight: 500;
-            border: 1px solid #dee2e6;
-        }
-
-        /* --- Projects --- */
-        .project-item {
-            margin-bottom: 20px;
-        }
-        .project-item:last-child {
-            margin-bottom: 0;
-        }
-        .project-item h3 {
-            font-size: 1.3em;
-            margin-bottom: 5px;
-            color: var(--dark-gray-color);
-        }
-        .project-item p {
-            margin-bottom: 10px;
-            color: var(--secondary-color);
-        }
-        .project-link {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: var(--white-color);
-            padding: 10px 18px;
+        header a {
+            color: #fff;
             text-decoration: none;
-            border-radius: var(--border-radius);
-            font-weight: 500;
-            transition: background-color 0.3s ease;
+            margin: 0 10px;
         }
-        .project-link:hover {
-            background-color: #5a6268;
+        header a:hover {
+            color: #0779e4;
         }
 
-        /* --- Resume Download Button --- */
-        .resume-section {
+        nav {
+            background: #444;
+            color: #fff;
+            padding: 0.5rem 0;
             text-align: center;
-            padding: 40px 30px; /* More padding for emphasis */
         }
-        .resume-button {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: var(--white-color);
-            padding: 15px 35px; /* Larger button */
-            font-size: 1.2em;
+
+        nav ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
             font-weight: bold;
-            text-decoration: none;
-            border-radius: var(--border-radius);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-            transition: background-color 0.3s ease, transform 0.2s ease;
         }
-        .resume-button:hover {
-            background-color: var(--primary-hover-color);
-            transform: translateY(-2px); /* Slight lift on hover */
+        nav a:hover {
+            color: #0779e4;
         }
 
-        /* --- Contact Section --- */
-        .contact-list {
-            list-style: none;
-            padding: 0;
+        section {
+            padding: 20px;
+            margin-bottom: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        .contact-list li {
-            margin-bottom: 10px;
-            font-size: 1.1em;
+
+        section h2 {
+            color: #333;
+            border-bottom: 2px solid #0779e4;
+            padding-bottom: 10px;
+            margin-top: 0;
         }
-        .contact-list a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
+
+        .skills-grid, .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
         }
-        .contact-list a:hover {
-            text-decoration: underline;
-            color: var(--primary-hover-color);
+
+        .skill-category, .project-item, .job, .education-item, .certification-item {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 5px solid #0779e4;
         }
-        .contact-list strong {
-            color: var(--dark-gray-color);
-            min-width: 70px; /* Align items */
+        .skill-category h3, .project-item h3, .job h3, .education-item h3 {
+            margin-top: 0;
+            color: #0779e4;
+        }
+
+        ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+
+        .job-title {
+            font-weight: bold;
+        }
+        .job-company {
+            font-style: italic;
+            color: #555;
+        }
+        .job-dates {
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        .project-link a {
             display: inline-block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background: #0779e4;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .project-link a:hover {
+            background: #0056b3;
         }
 
-
-        /* --- Footer --- */
         footer {
             text-align: center;
             padding: 20px;
-            color: var(--secondary-color);
-            font-size: 0.9em;
-            width: 100%;
+            background: #333;
+            color: #fff;
+            margin-top: 30px;
         }
 
-        /* --- Responsive Adjustments --- */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.2em;
-            }
-            .hero .tagline {
-                font-size: 1.1em;
-            }
-            h2 {
-                font-size: 1.6em;
-            }
+        /* Basic Responsive */
+        @media(max-width: 768px){
             .container {
                 width: 95%;
-                margin-top: 10px;
             }
-            section, .hero {
-                padding: 25px 20px;
+            header h1 {
+                font-size: 2em;
             }
-            .resume-section {
-                 padding: 30px 20px;
+            nav ul li {
+                display: block;
+                margin-bottom: 10px;
             }
-            .resume-button {
-                padding: 12px 30px;
-                font-size: 1.1em;
-            }
-        }
-         @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 1.8em;
-            }
-            .hero .tagline {
-                font-size: 1em;
-            }
-             .skills-list li {
-                font-size: 0.9em;
-                padding: 6px 12px;
+            .skills-grid, .projects-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
+    <header>
+        <div class="container">
+            <h1>AJAY VARGHESE</h1>
+            <p>Manchester, UK | <a href="mailto:ajayvarghese228@gmail.com">ajayvarghese228@gmail.com</a> | Mobile: 07587335271</p>
+            <p><a href="https://linkedin.com/in/ajayvarghese228" target="_blank">linkedin.com/in/ajayvarghese228</a></p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="Aboutme.pdf" target="_blank">Resume PDF</a></li>
+            </ul>
+        </div>
+    </nav>
 
     <div class="container">
-        <header class="hero">
-            <h1>Ajay Varghese</h1>
-            <p class="tagline">Aspiring Software Developer | Tech Enthusiast</p>
-        </header>
-
         <section id="about">
             <h2>About Me</h2>
-            <p>Hello! I'm Ajay Varghese, a passionate and dedicated individual with a strong interest in technology and software development. Eager to apply my skills and learn new technologies to contribute to impactful projects.</p>
+            <p>
+                A highly motivated and results-oriented professional with a Master's in Engineering Management
+                and a background in Electrical and Electronics Engineering. Passionate about leveraging technical
+                and business skills to drive innovation, sustainability, and efficiency. Proven ability in
+                project coordination, data analysis with tools like Power BI, and stakeholder engagement
+                across diverse industries, from tech support to business development and operational roles.
+                Seeking to apply a broad skill set to challenging opportunities.
+            </p>
         </section>
 
         <section id="skills">
             <h2>Skills</h2>
-            <ul class="skills-list">
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>Python</li>
-                <li>Java</li>
-                <li>C/C++</li>
-                <li>SQL</li>
-                <li>Git & GitHub</li>
-                <li>Power BI</li>
-                <li>Project Management</li>
-                <li>Data Analysis</li>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Business & Project Tools</h3>
+                    <ul>
+                        <li>Power BI</li>
+                        <li>SPSS</li>
+                        <li>NVIVO</li>
+                        <li>WordPress</li>
+                        <li>HubSpot</li>
+                        <li>Microsoft Office (Excel, Word, PowerPoint, Outlook)</li>
+                        <li>MS Teams</li>
+                        <li>SharePoint</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>CRM & Outreach</h3>
+                    <ul>
+                        <li>LinkedIn Sales Navigator</li>
+                        <li>Closely</li>
+                        <li>HubSpot CRM</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>IT & Admin Systems</h3>
+                    <ul>
+                        <li>JIRA</li>
+                        <li>ServiceNow</li>
+                        <li>AppDynamics</li>
+                        <li>SolarWinds</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>C</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Professional Skills</h3>
+                    <ul>
+                        <li>Data Entry</li>
+                        <li>Reporting & Documentation</li>
+                        <li>Client Communication</li>
+                        <li>Stakeholder Engagement</li>
+                        <li>Query Management</li>
+                        <li>Customer Support & Coordination</li>
+                        <li>Lead Management</li>
+                        <li>Multitasking</li>
+                        <li>Time Management</li>
+                        <li>Project Coordination</li>
+                        <li>Process Improvement</li>
+                        <li>Change Management</li>
+                        <li>Team Collaboration</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Soft Skills</h3>
+                    <ul>
+                        <li>Customer Service</li>
+                        <li>Emotional Intelligence</li>
+                        <li>Flexibility (Shift & Role)</li>
+                        <li>Public Speaking</li>
+                        <li>Problem Solving</li>
+                        <li>Cross-Functional Teamwork</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Marketing & Content</h3>
+                    <ul>
+                        <li>Social Media Marketing</li>
+                        <li>LinkedIn Content Creation</li>
+                        <li>Blog Writing</li>
+                        <li>Newsletter Management</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="job">
+                <h3>Business Development Intern</h3>
+                <p><span class="job-company">New Waste Management (Startup)</span> | Remote</p>
+                <p class="job-dates">Aug 2024 – Present</p>
+                <ul>
+                    <li>Designed and launched a Power BI dashboard analysing waste behaviour across 300+ England councils, enabling quicker comparison and data-led recommendations.</li>
+                    <li>Managed and maintained detailed programme trackers in MS Excel, supporting internal reviews, stakeholder meetings, and project transparency.</li>
+                    <li>Collaborated with cross-functional teams to gather requirements, document workflows, and implement operational improvements.</li>
+                    <li>Produced regular status updates and maintained risk logs, supporting data-driven decision-making and robust governance processes.</li>
+                    <li>Maintained the company’s LinkedIn presence, publishing blogs and newsletters to boost visibility and engagement with key sustainability topics.</li>
+                    <li>Attended client-facing sales meetings and presented service insights, strengthening technical credibility and supporting business retention.</li>
                 </ul>
+            </div>
+            <div class="job">
+                <h3>Coach Driver</h3>
+                <p><span class="job-company">Manchester Airport Group</span> | Manchester, UK</p>
+                <p class="job-dates">May 2025 – Present</p>
+                <ul>
+                    <li>Safely transport passengers to and from terminals, delivering a reliable and professional service across varied shift patterns.</li>
+                    <li>Demonstrate excellent time management and situational awareness under pressure, ensuring compliance with airport security protocols.</li>
+                    <li>Engage with diverse passengers, offering assistance and clear communication while promoting a calm and reassuring travel environment.</li>
+                    <li>Carry out routine vehicle inspections and report safety or maintenance concerns, aligning with company safety and cleanliness standards.</li>
+                    <li>Handle customer data and interactions in accordance with GDPR and company privacy policies, ensuring confidentiality and trust.</li>
+                </ul>
+            </div>
+            <div class="job">
+                <h3>Bus Driver</h3>
+                <p><span class="job-company">Metroline Manchester</span> | Manchester, UK</p>
+                <p class="job-dates">Sept 2024 – March 2025</p>
+                <ul>
+                    <li>Delivered excellent front-line customer service, ensuring passengers felt safe, respected, and well-informed throughout their journey.</li>
+                    <li>Communicated clearly and professionally with passengers, providing updates and resolving issues calmly and courteously.</li>
+                    <li>Adhered strictly to road safety regulations, company policies, and scheduled routes to ensure punctual and secure transport.</li>
+                    <li>Maintained high standards of vehicle cleanliness and presentation, conducting thorough pre- and post-shift checks.</li>
+                    <li>Followed GDPR protocols when handling travel-related queries, maintaining confidentiality and discretion at all times.</li>
+                </ul>
+            </div>
+            <div class="job">
+                <h3>Kitchen Manager</h3>
+                <p><span class="job-company">Curry House</span> | Manchester, UK</p>
+                <p class="job-dates">September 2023 – July 2024</p>
+                <ul>
+                    <li>Managed daily kitchen operations, ensuring 100% compliance with food safety regulations and hygiene standards.</li>
+                    <li>Supervised and trained kitchen staff, fostering teamwork and ensuring efficient workflow.</li>
+                    <li>Controlled inventory and placed weekly orders, cutting food waste by 25% through tighter stock control and forecasting.</li>
+                    <li>Monitored kitchen performance and customer feedback, helping increase positive reviews by 30% within six months.</li>
+                    <li>Coordinated with front-line staff to ensure timely food delivery and customer service excellence.</li>
+                    <li>Implemented operational improvements to enhance efficiency, reduce costs, and improve food quality.</li>
+                </ul>
+            </div>
+             <div class="job">
+                <h3>Carer</h3>
+                <p><span class="job-company">Lotus Care Home</span> | York, UK</p>
+                <p class="job-dates">Sep 2022 – Mar 2023</p>
+                <ul>
+                    <li>Delivered person-centred care to 15+ residents, assisting with mobility, hygiene, and daily activities to improve comfort and independence.</li>
+                    <li>Monitored and documented health changes, enabling early intervention and reducing medical escalations by 30%.</li>
+                    <li>Provided emotional support and companionship, contributing to a noticeable improvement in resident wellbeing and satisfaction.</li>
+                    <li>Maintained accurate care logs and ensured 100% compliance with safeguarding and hygiene standards during every shift.</li>
+                </ul>
+            </div>
+            <div class="job">
+                <h3>Associate Software Engineer (IT Support Analyst)</h3>
+                <p><span class="job-company">Hexaware Technologies</span> | Chennai, India</p>
+                <p class="job-dates">Aug 2020 – Aug 2022</p>
+                <p><em>Client: Murphy USA, Trustmark</em></p>
+                <ul>
+                    <li>Delivered 1st and 2nd line support across 9+ global teams using ServiceNow, maintaining 100% SLA response rates.</li>
+                    <li>Logged, escalated, and resolved high-volume incidents while providing L1 troubleshooting for Windows, Active Directory, and O365 issues.</li>
+                    <li>Monitored systems using SolarWinds and AppDynamics, ensuring consistent application uptime and early issue detection.</li>
+                    <li>Documented technical issues and updates thoroughly, supporting change management and enhancing the internal knowledge base.</li>
+                    <li>Maintained daily issue trackers and drafted SOPs to standardise processes and improve response consistency.</li>
+                    <li>Ensured continuous communication with cross-functional teams and adapted to flexible shift patterns to support global operations.</li>
+                </ul>
+            </div>
         </section>
 
         <section id="projects">
             <h2>Projects</h2>
-            <div class="project-item">
-                <h3>York Waste Strategy Review</h3>
-                <p>Conducted a data-driven analysis of York’s waste management to provide strategic recommendations for improving efficiency and sustainability.</p>
+            <div class="projects-grid">
+                <div class="project-item">
+                    <h3>Project 1: York Waste Strategy Review</h3>
+                    <p>Conducted a data-driven analysis of York’s waste management to provide strategic recommendations for improving efficiency and sustainability.</p>
+                    </div>
+                <div class="project-item">
+                    <h3>Project 2: Sales Forecasting with Time Series Analysis</h3>
+                    <p>Performed time series analysis on sales data to generate accurate forecasts, using visualisations (Excel and Power BI) to present insights and improve sales strategies.</p>
+                    </div>
+                <div class="project-item">
+                    <h3>Project 3: Bike Company Simulation</h3>
+                    <p>Led as CEO in a 5-year business simulation, navigating operations, sales, marketing, and R&D to achieve sales and profit targets in a competitive market, demonstrating business acumen and strategic thinking.</p>
                 </div>
-            <div class="project-item">
-                <h3>Sales Forecasting with Time Series Analysis</h3>
-                <p>Performed time series analysis on sales data to generate accurate forecasts, using visualisations (Excel and Power BI) to present insights.</p>
+                <div class="project-item">
+                    <h3>Project 4: Fractional Order Control for Non-Linear Conical Tank System</h3>
+                    <p>Designed and implemented a fractional-order controller to stabilise liquid levels in a conical tank, improving response accuracy and control efficiency.</p>
                 </div>
-            </section>
-
-        <section id="resume" class="resume-section">
-            <h2>Resume</h2>
-            <a href="Aboutme.pdf" target="_blank" class="resume-button">Download My Resume</a>
+            </div>
         </section>
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <ul class="contact-list">
-                <li><strong>Email:</strong> <a href="mailto:ajayvarghese228@gmail.com">ajayvarghese228@gmail.com</a></li>
-                <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/ajayvarghese228" target="_blank">linkedin.com/in/ajayvarghese228</a></li>
-                <li><strong>GitHub:</strong> <a href="https://github.com/ajayvarghese228" target="_blank">github.com/ajayvarghese228</a></li>
-            </ul>
+        <section id="education">
+            <h2>Education</h2>
+            <div class="education-item">
+                <h3>MSc in Engineering Management – 2:1 (Distinction)</h3>
+                <p><span class="job-company">University of York</span> | York, UK</p>
+                <p class="job-dates">Sep 2022 – Sep 2023</p>
+                <p><strong>Team Lead:</strong> Strategic research project on waste management and sustainability</p>
+                <p><strong>Key Modules:</strong> Project Management, Account & Finance, Strategic Management, Marketing, Sustainability, Technology Management, Law of Employment</p>
+            </div>
+            <div class="education-item">
+                <h3>B.Tech in Electrical and Electronics Engineering</h3>
+                <p><span class="job-company">APJ Abdul Kalam Technological University</span> | Kerala, India</p>
+                <p class="job-dates">Apr 2016 – Jun 2020</p>
+                <p><strong>Focus Areas:</strong> Circuit Analysis, Power Systems, Control Systems</p>
+            </div>
         </section>
+
+        <section id="certifications">
+            <h2>Certifications & Achievements</h2>
+            <div class="certification-item">
+                 <ul>
+                    <li>Azure Fundamental certification- Az900</li>
+                    <li>Engineering Project Management: Initiating and Planning</li>
+                    <li>ITIL Foundation (Internal- Hexaware)</li>
+                    <li>Agile Project Management</li>
+                    <li>Data Visualisation with Power BI (Great Learning Academy)</li>
+                    <li>Paper accepted at the XVII Control Instrumentation System Conference (CISCON 2020)</li>
+                </ul>
+            </div>
+        </section>
+
     </div>
 
     <footer>
@@ -296,7 +418,6 @@
     </footer>
 
     <script>
-        // Simple script to update the year in the footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
 
