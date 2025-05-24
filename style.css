@@ -23,10 +23,12 @@ h1, h2, h3 {
 /* If you add a nav bar, you can style it here */
 
 /* --- Section Specific Styling --- */
-#about, #skills, #projects, #resume, #contact {
+/* MODIFIED: Added #looking-for to this common group */
+#about, #skills, #projects, #resume, #contact, #looking-for {
     margin-bottom: 40px; /* Space between sections */
     padding: 20px;
     border-bottom: 1px solid #eee; /* Light line between sections */
+    border-radius: 5px; /* Added for consistency with individual section styling */
 }
 
 #about {
@@ -38,10 +40,40 @@ h1, h2, h3 {
     background-color: #e8f5e9; /* Light green background for Skills */
     border-left: 5px solid #4caf50; /* Green left border */
 }
+
 #projects {
     background-color: #fff3e0; /* Light orange background for Projects */
     border-left: 5px solid #ff9800; /* Orange left border */
 }
+
+/* NEW: Added specific styling for the #looking-for section container */
+#looking-for {
+    background-color: #ede7f6; /* Light purple/lavender background */
+    border-left: 5px solid #673ab7; /* Deep purple left border */
+}
+
+/* --- Internal styles for "Looking For" Section (You already had these, just ensuring placement) --- */
+#looking-for p {
+    font-size: 1.05em;
+    margin-bottom: 15px;
+    color: #444; /* Slightly darker text for this section if desired, or inherit from general p */
+}
+
+.looking-for-list {
+    list-style: none; /* Emojis will act as bullets */
+    padding-left: 0;  /* Remove default padding */
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.looking-for-list li {
+    font-size: 1.05em;
+    margin-bottom: 8px;
+    padding-left: 5px; /* Optional: small indent if needed */
+    color: #333; /* Ensure text color for list items */
+}
+/* End of "Looking For" internal styles */
+
 
 /* --- Text & Links --- */
 p {
@@ -58,31 +90,13 @@ a:hover {
     color: #0056b3; /* Darker blue on hover */
     text-decoration: underline; /* Add underline on hover */
 }
-/* --- Looking For Section --- */
-        #looking-for p {
-            font-size: 1.05em;
-            margin-bottom: 15px;
-        }
-
-        .looking-for-list {
-            list-style: none; /* Emojis will act as bullets */
-            padding-left: 0;  /* Remove default padding */
-            margin-top: 10px;
-            margin-bottom: 15px;
-        }
-
-        .looking-for-list li {
-            font-size: 1.05em;
-            margin-bottom: 8px;
-            padding-left: 5px; /* Optional: small indent if needed */
-        }
 
 /* --- Buttons (if you add any) --- */
 .button {
     display: inline-block;
     padding: 10px 20px;
     background-color: #007bff;
-    color: white;
+    color: white !important; /* Ensure white text for buttons */
     border: none;
     border-radius: 5px;
     text-decoration: none;
@@ -91,4 +105,5 @@ a:hover {
 
 .button:hover {
     background-color: #0056b3;
+    text-decoration: none; /* Ensure no underline on button hover if link */
 }
