@@ -102,6 +102,48 @@ a:hover {
     text-decoration: none;
     cursor: pointer;
 }
+/* --- About Me Section with Image --- */
+#about .about-content {
+    display: flex;
+    align-items: flex-start; 
+    gap: 25px; 
+    margin-top: 15px; 
+}
+
+#about .about-image-container {
+    flex-basis: 160px; 
+    flex-shrink: 0;   
+}
+
+#about .about-image-container img {
+    width: 100%;              
+    height: auto;             
+    border-radius: 50%;       
+    border: 3px solid #007bff; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15); 
+}
+
+#about .about-text-container {
+    flex-grow: 1; 
+}
+
+/* Responsive adjustments for the About Me section */
+@media (max-width: 768px) { 
+    #about .about-content {
+        flex-direction: column; 
+        align-items: center;    
+    }
+
+    #about .about-image-container {
+        flex-basis: auto; 
+        width: 150px;     
+        margin-bottom: 20px; 
+    }
+
+    #about .about-text-container {
+        text-align: center; 
+    }
+}
 
 .button:hover {
     background-color: #0056b3;
