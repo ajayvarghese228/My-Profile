@@ -58,6 +58,24 @@ a:hover {
     color: #0056b3; /* Darker blue on hover */
     text-decoration: underline; /* Add underline on hover */
 }
+/* --- Looking For Section --- */
+        #looking-for p {
+            font-size: 1.05em;
+            margin-bottom: 15px;
+        }
+
+        .looking-for-list {
+            list-style: none; /* Emojis will act as bullets */
+            padding-left: 0;  /* Remove default padding */
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+
+        .looking-for-list li {
+            font-size: 1.05em;
+            margin-bottom: 8px;
+            padding-left: 5px; /* Optional: small indent if needed */
+        }
 
 /* --- Buttons (if you add any) --- */
 .button {
