@@ -136,7 +136,7 @@ a:hover {
 
     #about .about-image-container {
         flex-basis: auto; 
-        width: 100px;     
+        width: 80px;  /* REDUCED from 100px - Adjust this value as needed */
         margin-bottom: 20px; 
     }
 
@@ -145,6 +145,9 @@ a:hover {
     }
 }
 
+/* The .button:hover rule below is unrelated to the image size,
+   but I'm including it as it was part of your paste.
+   No changes needed for it based on your request. */
 .button:hover {
     background-color: #0056b3;
     text-decoration: none; /* Ensure no underline on button hover if link */
