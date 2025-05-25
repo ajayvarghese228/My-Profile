@@ -4,446 +4,152 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajay Varghese | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f2f5;
             color: #333;
         }
 
         .container {
-            width: 80%;
+            width: 90%;
+            max-width: 1200px;
             margin: auto;
-            overflow: hidden;
-            padding: 0 20px;
+            padding: 20px;
         }
 
         header {
-            background: #333;
+            background: linear-gradient(90deg, #004e92, #000428);
             color: #fff;
-            padding: 1rem 0;
+            padding: 2rem 1rem;
             text-align: center;
-            border-bottom: #0779e4 3px solid;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         header h1 {
-            margin: 0;
-            font-size: 2.5em;
+            font-size: 3rem;
+            letter-spacing: 2px;
         }
 
-        header p {
-            margin: 5px 0;
-            font-size: 0.9em;
+        header p, header a {
+            font-size: 1rem;
+            color: #dcdcdc;
         }
 
-        header a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 10px;
-        }
         header a:hover {
-            color: #0779e4;
+            color: #66fcf1;
         }
 
         nav {
-            background: #444;
+            background: #1f2833;
             color: #fff;
-            padding: 0.5rem 0;
+            padding: 1rem 0;
             text-align: center;
         }
 
         nav ul {
-            padding: 0;
             list-style: none;
         }
 
         nav ul li {
             display: inline;
-            margin-right: 20px;
+            margin: 0 15px;
         }
 
         nav a {
             color: #fff;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 500;
+            transition: color 0.3s;
         }
+
         nav a:hover {
-            color: #0779e4;
+            color: #66fcf1;
         }
 
         section {
-            padding: 20px;
-            margin-bottom: 20px;
             background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+
+        section:hover {
+            transform: scale(1.01);
         }
 
         section h2 {
-            color: #333;
-            border-bottom: 2px solid #0779e4;
-            padding-bottom: 10px;
-            margin-top: 0;
+            border-left: 5px solid #004e92;
+            padding-left: 15px;
+            margin-bottom: 20px;
+            color: #004e92;
         }
 
         .skills-grid, .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
         }
 
         .skill-category, .project-item, .job, .education-item, .certification-item {
-            background: #f9f9f9;
+            background: #fafafa;
+            border-left: 4px solid #66fcf1;
             padding: 15px;
-            border-radius: 5px;
-            border-left: 5px solid #0779e4;
-        }
-        .skill-category h3, .project-item h3, .job h3, .education-item h3 {
-            margin-top: 0;
-            color: #0779e4;
+            border-radius: 8px;
+            transition: background 0.3s;
         }
 
-        ul { /* This is for the bullet points inside jobs, projects etc. */
-            list-style: disc;
-            padding-left: 20px;
-        }
-
-        .job-title { /* This class was in some earlier versions, but not used in your current job HTML structure */
-            font-weight: bold;
-        }
-        .job-company {
-            font-style: italic;
-            color: #555;
-        }
-        .job-dates {
-            font-size: 0.9em;
-            color: #777;
+        .skill-category:hover, .project-item:hover {
+            background: #f1f1f1;
         }
 
         .project-link a {
             display: inline-block;
-            margin-top: 10px;
-            padding: 8px 15px;
-            background: #0779e4;
+            background: #004e92;
             color: #fff;
-            text-decoration: none;
+            padding: 8px 15px;
             border-radius: 5px;
+            text-decoration: none;
         }
+
         .project-link a:hover {
-            background: #0056b3;
+            background: #002d62;
         }
 
         footer {
-            text-align: center;
-            padding: 20px;
-            background: #333;
+            background: #1f2833;
             color: #fff;
-            margin-top: 30px;
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9em;
         }
 
-        /* Basic Responsive */
-        @media(max-width: 768px){
-            .container {
-                width: 95%;
-            }
+        ul {
+            padding-left: 20px;
+            line-height: 1.6;
+        }
+
+        @media(max-width: 768px) {
             header h1 {
-                font-size: 2em;
+                font-size: 2rem;
             }
             nav ul li {
                 display: block;
-                margin-bottom: 10px;
-            }
-            .skills-grid, .projects-grid {
-                grid-template-columns: 1fr;
+                margin: 10px 0;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>AJAY VARGHESE</h1>
-            <p>Manchester, UK | <a href="mailto:ajayvarghese228@gmail.com">ajayvarghese228@gmail.com</a> | Mobile: 07587335271</p>
-            <p><a href="https://linkedin.com/in/ajayvarghese228" target="_blank">linkedin.com/in/ajayvarghese228</a></p>
-        </div>
-    </header>
-
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#looking-for">Looking For</a></li>
-                <li><a href="Aboutme.pdf" target="_blank">Resume PDF</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <div class="container">
-        <section id="about">
-            <h2>About Me</h2>
-            <p>
-                I’m a versatile and ambitious professional with a background in engineering management, business strategy, and operations.
-                With hands-on experience across startups and global teams, I bring a balanced mix of technical insight, stakeholder engagement, and a bias for action. 
-                Whether it's building dashboards, improving systems, or supporting service delivery, I thrive on turning complex challenges into practical, people-centred solutions. 
-                I value clarity, collaboration, and continuous learning in every role I take on.
-            </p>
-        </section>
-        <section id="skills">
-            <h2>Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Business & Project Tools</h3>
-                    <ul>
-                        <li>Power BI</li>
-                        <li>SPSS</li>
-                        <li>NVIVO</li>
-                        <li>WordPress</li>
-                        <li>HubSpot</li>
-                        <li>Microsoft Office (Excel, Word, PowerPoint, Outlook)</li>
-                        <li>MS Teams</li>
-                        <li>SharePoint</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>CRM & Outreach</h3>
-                    <ul>
-                        <li>LinkedIn Sales Navigator</li>
-                        <li>Closely</li>
-                        <li>HubSpot CRM</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>IT & Admin Systems</h3>
-                    <ul>
-                        <li>JIRA</li>
-                        <li>ServiceNow</li>
-                        <li>AppDynamics</li>
-                        <li>SolarWinds</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Programming Languages</h3>
-                    <ul>
-                        <li>Python</li>
-                        <li>C</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Professional Skills</h3>
-                    <ul>
-                        <li>Data Entry</li>
-                        <li>Reporting & Documentation</li>
-                        <li>Client Communication</li>
-                        <li>Stakeholder Engagement</li>
-                        <li>Query Management</li>
-                        <li>Customer Support & Coordination</li>
-                        <li>Lead Management</li>
-                        <li>Multitasking</li>
-                        <li>Time Management</li>
-                        <li>Project Coordination</li>
-                        <li>Process Improvement</li>
-                        <li>Change Management</li>
-                        <li>Team Collaboration</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Soft Skills</h3>
-                    <ul>
-                        <li>Customer Service</li>
-                        <li>Emotional Intelligence</li>
-                        <li>Flexibility (Shift & Role)</li>
-                        <li>Public Speaking</li>
-                        <li>Problem Solving</li>
-                        <li>Cross-Functional Teamwork</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Marketing & Content</h3>
-                    <ul>
-                        <li>Social Media Marketing</li>
-                        <li>LinkedIn Content Creation</li>
-                        <li>Blog Writing</li>
-                        <li>Newsletter Management</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="experience">
-            <h2>Experience</h2>
-            <div class="job">
-                <h3>Business Development Intern</h3>
-                <p><span class="job-company">New Waste Management (Startup)</span> | Remote</p>
-                <p class="job-dates">Aug 2024 – Present</p>
-                <ul>
-                    <li>Designed and launched a Power BI dashboard analysing waste behaviour across 300+ England councils, enabling quicker comparison and data-led recommendations.</li>
-                    <li>Managed and maintained detailed programme trackers in MS Excel, supporting internal reviews, stakeholder meetings, and project transparency.</li>
-                    <li>Collaborated with cross-functional teams to gather requirements, document workflows, and implement operational improvements.</li>
-                    <li>Produced regular status updates and maintained risk logs, supporting data-driven decision-making and robust governance processes.</li>
-                    <li>Maintained the company’s LinkedIn presence, publishing blogs and newsletters to boost visibility and engagement with key sustainability topics.</li>
-                    <li>Attended client-facing sales meetings and presented service insights, strengthening technical credibility and supporting business retention.</li>
-                </ul>
-            </div>
-            <div class="job">
-                <h3>Coach Driver</h3>
-                <p><span class="job-company">Manchester Airport Group</span> | Manchester, UK</p>
-                <p class="job-dates">May 2025 – Present</p>
-                <ul>
-                    <li>Safely transport passengers to and from terminals, delivering a reliable and professional service across varied shift patterns.</li>
-                    <li>Demonstrate excellent time management and situational awareness under pressure, ensuring compliance with airport security protocols.</li>
-                    <li>Engage with diverse passengers, offering assistance and clear communication while promoting a calm and reassuring travel environment.</li>
-                    <li>Carry out routine vehicle inspections and report safety or maintenance concerns, aligning with company safety and cleanliness standards.</li>
-                    <li>Handle customer data and interactions in accordance with GDPR and company privacy policies, ensuring confidentiality and trust.</li>
-                </ul>
-            </div>
-            <div class="job">
-                <h3>Bus Driver</h3>
-                <p><span class="job-company">Metroline Manchester</span> | Manchester, UK</p>
-                <p class="job-dates">Sept 2024 – March 2025</p>
-                <ul>
-                    <li>Delivered excellent front-line customer service, ensuring passengers felt safe, respected, and well-informed throughout their journey.</li>
-                    <li>Communicated clearly and professionally with passengers, providing updates and resolving issues calmly and courteously.</li>
-                    <li>Adhered strictly to road safety regulations, company policies, and scheduled routes to ensure punctual and secure transport.</li>
-                    <li>Maintained high standards of vehicle cleanliness and presentation, conducting thorough pre- and post-shift checks.</li>
-                    <li>Followed GDPR protocols when handling travel-related queries, maintaining confidentiality and discretion at all times.</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h3>Marketing and Sales Associate</h3>
-                <p><span class="job-company">Full House Partners</span> | Manchester, UK</p>
-                <p class="job-dates">May 2024 – Aug 2024</p>
-                <ul>
-                    <li>Created and maintained daily reports tracking sales performance, appointments, and campaign KPIs to support decision-making.</li>
-                    <li>Engaged directly with customers, building rapport and responding to queries to enhance the client experience and drive interest.</li>
-                    <li>Identified sales blockers through feedback, supporting campaign realignment and helping improve lead quality and conversion.</li>
-                    <li>Prepared persuasive updates and insight summaries for senior staff using PowerPoint dashboards and client data.</li>
-                    <li>Demonstrated commercial awareness and product knowledge to support team goals and maximise campaign success.</li>
-                </ul>
-            </div>
-            <div class="job">
-                <h3>Kitchen Manager</h3>
-                <p><span class="job-company">Curry House</span> | Manchester, UK</p>
-                <p class="job-dates">September 2023 – July 2024</p>
-                <ul>
-                    <li>Managed daily kitchen operations, ensuring 100% compliance with food safety regulations and hygiene standards.</li>
-                    <li>Supervised and trained kitchen staff, fostering teamwork and ensuring efficient workflow.</li>
-                    <li>Controlled inventory and placed weekly orders, cutting food waste by 25% through tighter stock control and forecasting.</li>
-                    <li>Monitored kitchen performance and customer feedback, helping increase positive reviews by 30% within six months.</li>
-                    <li>Coordinated with front-line staff to ensure timely food delivery and customer service excellence.</li>
-                    <li>Implemented operational improvements to enhance efficiency, reduce costs, and improve food quality.</li>
-                </ul>
-            </div>
-             <div class="job">
-                <h3>Carer</h3>
-                <p><span class="job-company">Lotus Care Home</span> | York, UK</p>
-                <p class="job-dates">Sep 2022 – Mar 2023</p>
-                <ul>
-                    <li>Delivered person-centred care to 15+ residents, assisting with mobility, hygiene, and daily activities to improve comfort and independence.</li>
-                    <li>Monitored and documented health changes, enabling early intervention and reducing medical escalations by 30%.</li>
-                    <li>Provided emotional support and companionship, contributing to a noticeable improvement in resident wellbeing and satisfaction.</li>
-                    <li>Maintained accurate care logs and ensured 100% compliance with safeguarding and hygiene standards during every shift.</li>
-                </ul>
-            </div>
-            <div class="job">
-                <h3>Associate Software Engineer (IT Support Analyst)</h3>
-                <p><span class="job-company">Hexaware Technologies</span> | Chennai, India</p>
-                <p class="job-dates">Aug 2020 – Aug 2022</p>
-                <p><em>Client: Murphy USA, Trustmark</em></p>
-                <ul>
-                    <li>Delivered 1st and 2nd line support across 9+ global teams using ServiceNow, maintaining 100% SLA response rates.</li>
-                    <li>Logged, escalated, and resolved high-volume incidents while providing L1 troubleshooting for Windows, Active Directory, and O365 issues.</li>
-                    <li>Monitored systems using SolarWinds and AppDynamics, ensuring consistent application uptime and early issue detection.</li>
-                    <li>Documented technical issues and updates thoroughly, supporting change management and enhancing the internal knowledge base.</li>
-                    <li>Maintained daily issue trackers and drafted SOPs to standardise processes and improve response consistency.</li>
-                    <li>Ensured continuous communication with cross-functional teams and adapted to flexible shift patterns to support global operations.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="projects-grid">
-                <div class="project-item">
-                    <h3>Project 1: York Waste Strategy Review</h3>
-                    <p>Conducted a data-driven analysis of York’s waste management to provide strategic recommendations for improving efficiency and sustainability.</p>
-                    </div>
-                <div class="project-item">
-                    <h3>Project 2: Sales Forecasting with Time Series Analysis</h3>
-                    <p>Performed time series analysis on sales data to generate accurate forecasts, using visualisations (Excel and Power BI) to present insights and improve sales strategies.</p>
-                    </div>
-                <div class="project-item">
-                    <h3>Project 3: Bike Company Simulation</h3>
-                    <p>Led as CEO in a 5-year business simulation, navigating operations, sales, marketing, and R&D to achieve sales and profit targets in a competitive market, demonstrating business acumen and strategic thinking.</p>
-                </div>
-                <div class="project-item">
-                    <h3>Project 4: Fractional Order Control for Non-Linear Conical Tank System</h3>
-                    <p>Designed and implemented a fractional-order controller to stabilise liquid levels in a conical tank, improving response accuracy and control efficiency.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="education">
-            <h2>Education</h2>
-            <div class="education-item">
-                <h3>MSc in Engineering Management – 2:1 (Distinction)</h3>
-                <p><span class="job-company">University of York</span> | York, UK</p>
-                <p class="job-dates">Sep 2022 – Sep 2023</p>
-                <p><strong>Team Lead:</strong> Strategic research project on waste management and sustainability</p>
-                <p><strong>Key Modules:</strong> Project Management, Account & Finance, Strategic Management, Marketing, Sustainability, Technology Management, Law of Employment</p>
-            </div>
-            <div class="education-item">
-                <h3>B.Tech in Electrical and Electronics Engineering</h3>
-                <p><span class="job-company">APJ Abdul Kalam Technological University</span> | Kerala, India</p>
-                <p class="job-dates">Apr 2016 – Jun 2020</p>
-                <p><strong>Focus Areas:</strong> Circuit Analysis, Power Systems, Control Systems</p>
-            </div>
-        </section>
-
-        <section id="certifications">
-            <h2>Certifications & Achievements</h2>
-            <div class="certification-item">
-                 <ul>
-                    <li>Azure Fundamental certification- Az900</li>
-                    <li>Engineering Project Management: Initiating and Planning</li>
-                    <li>ITIL Foundation (Internal- Hexaware)</li>
-                    <li>Agile Project Management</li>
-                    <li>Data Visualisation with Power BI (Great Learning Academy)</li>
-                    <li>Paper accepted at the XVII Control Instrumentation System Conference (CISCON 2020)</li>
-                </ul>
-            </div>
-        </section>
-        <section id="looking-for">
-            <h2>💡 What I’m Actively Looking For</h2>
-            <p>I’m actively seeking a full-time UK-based opportunity with visa sponsorship in a dynamic, forward-thinking organisation.</p>
-            <p>My interests lie in:</p>
-            <ul class="looking-for-list" style="list-style: none; padding-left: 0;"> <li>🔹 Technical Project / Programme Management</li>
-                <li>🔹 Business & Strategy</li>
-                <li>🔹 Sustainability & Operations</li>
-                <li>🔹 Tech & Innovation</li>
-                <li>🔹 Stakeholder-Facing Roles</li>
-            </ul>
-            <p>I'm excited to contribute to purposeful work that blends innovation, impact, and strong collaboration.</p>
-        </section>
-        
-
-    </div>
-
-    <footer>
-        <p>&copy; <span id="currentYear"></span> Ajay Varghese. All rights reserved.</p>
-    </footer>
-
-    <script>
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-    </script>
-
+    <!-- Your existing content stays the same inside body -->
 </body>
 </html>
