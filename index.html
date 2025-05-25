@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -107,12 +106,12 @@
             color: #0779e4;
         }
 
-        ul {
+        ul { /* This is for the bullet points inside jobs, projects etc. */
             list-style: disc;
             padding-left: 20px;
         }
 
-        .job-title {
+        .job-title { /* This class was in some earlier versions, but not used in your current job HTML structure */
             font-weight: bold;
         }
         .job-company {
@@ -189,20 +188,14 @@
 
     <div class="container">
         <section id="about">
-    <h2>About Me</h2>
-    <div class="about-content">
-        <div class="about-text-container"> <p>
+            <h2>About Me</h2>
+            <p>
                 I’m a versatile and ambitious professional with a background in engineering management, business strategy, and operations.
                 With hands-on experience across startups and global teams, I bring a balanced mix of technical insight, stakeholder engagement, and a bias for action. 
                 Whether it's building dashboards, improving systems, or supporting service delivery, I thrive on turning complex challenges into practical, people-centred solutions. 
                 I value clarity, collaboration, and continuous learning in every role I take on.
             </p>
-        </div>
-        <div class="about-image-container"> <img src="profile.jpg" alt="Ajay Varghese"> 
-        </div>
-    </div>
-</section>
-
+        </section>
         <section id="skills">
             <h2>Skills</h2>
             <div class="skills-grid">
@@ -322,7 +315,9 @@
                     <li>Maintained high standards of vehicle cleanliness and presentation, conducting thorough pre- and post-shift checks.</li>
                     <li>Followed GDPR protocols when handling travel-related queries, maintaining confidentiality and discretion at all times.</li>
                 </ul>
-                </div>
+            </div>
+
+            <div class="job">
                 <h3>Marketing and Sales Associate</h3>
                 <p><span class="job-company">Full House Partners</span> | Manchester, UK</p>
                 <p class="job-dates">May 2024 – Aug 2024</p>
@@ -333,8 +328,8 @@
                     <li>Prepared persuasive updates and insight summaries for senior staff using PowerPoint dashboards and client data.</li>
                     <li>Demonstrated commercial awareness and product knowledge to support team goals and maximise campaign success.</li>
                 </ul>
-                </div>
-                <div class="job">
+            </div>
+            <div class="job">
                 <h3>Kitchen Manager</h3>
                 <p><span class="job-company">Curry House</span> | Manchester, UK</p>
                 <p class="job-dates">September 2023 – July 2024</p>
@@ -430,8 +425,7 @@
             <h2>💡 What I’m Actively Looking For</h2>
             <p>I’m actively seeking a full-time UK-based opportunity with visa sponsorship in a dynamic, forward-thinking organisation.</p>
             <p>My interests lie in:</p>
-            <ul class="looking-for-list">
-                <li>🔹 Technical Project / Programme Management</li>
+            <ul class="looking-for-list" style="list-style: none; padding-left: 0;"> <li>🔹 Technical Project / Programme Management</li>
                 <li>🔹 Business & Strategy</li>
                 <li>🔹 Sustainability & Operations</li>
                 <li>🔹 Tech & Innovation</li>
